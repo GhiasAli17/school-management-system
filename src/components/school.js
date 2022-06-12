@@ -4,34 +4,32 @@ import { getDatabase, ref, set, onValue,push } from "firebase/database";
 
 const db = getDatabase(app);
 
-export  default function alumni() {
+export  default function School() {
 
     function writeClick(){
 
-        push(ref(db, 'users/alumni' ), {
-            username: 'anees',
-            email: 'anees@gmail.com',
-            profile_picture : 'abc.com',
-            approve: false
+        push(ref(db, 'School' ), {
+            name: 'school1',
+            message: 'two table required',
         }).then(()=>{
-            console.log('alumni data saved successfully')
+            console.log('school data saved successfully')
         }).catch(err=>{
-            console.log('alumni', err)
+            console.log('school', err)
         });
     }
 
     function readClick(){
 
-        const starCountRef = ref(db, 'users/alumni');
+        const starCountRef = ref(db, 'school');
         onValue(starCountRef, (snapshot) => {
             const data = snapshot.val();
-            console.log('data', data);
+            console.log('school data', data);
         });
 
     }
     return(
         <>
-            <h1>Alumni Pannel</h1>
+            <h1>School panel</h1>
             <button onClick={writeClick}>Write</button> <br />
             <button onClick={readClick}>Read</button>
         </>

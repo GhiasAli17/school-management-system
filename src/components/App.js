@@ -3,6 +3,9 @@ import '../App.css';
 import {AuthProvider} from "../contexts/AuthContext";
 import Signup from "./signup";
 import Realtimedatabase from "./realtimedatabase";
+import Alumni from "./alumni";
+import School from "./school";
+
 
 
 function App() {
@@ -10,6 +13,8 @@ function App() {
     <>
      <Signup />
       <Realtimedatabase />
+        <Alumni />
+        <School />
     </>
   );
 }
