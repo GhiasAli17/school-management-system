@@ -8,9 +8,9 @@ export  default function realtimedatabase() {
 
     function writeClick(){
 
-        set(ref(db, 'users/admin' ), {
-            username: 'ghias',
-            email: 'ghias@gmail.com',
+        set(ref(db, 'users/alumni' ), {
+            username: 'anees',
+            email: 'anees@gmail.com',
             profile_picture : 'abc.com'
         }).then(()=>{
             console.log('data saved successfully')
@@ -21,7 +21,7 @@ export  default function realtimedatabase() {
 
     function readClick(){
 
-        const starCountRef = ref(db, 'users/admin');
+        const starCountRef = ref(db, 'users/alumni');
         onValue(starCountRef, (snapshot) => {
             const data = snapshot.val();
             console.log('data', data);
@@ -30,6 +30,7 @@ export  default function realtimedatabase() {
     }
     return(
         <>
+            <h1>Alumni Pannel</h1>
             <button onClick={writeClick}>Write</button> <br />
             <button onClick={readClick}>Read</button>
         </>
